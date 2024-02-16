@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <title>Creación de Cuenta - Tickets Now</title>
+</head>
+<body class="crear_cuenta">
+    <header>
+        <h1>Tickets Now</h1>
+    </header>
+    <nav>
+        <a href="login.html">Inicio</a>
+    </nav>
+    <div class="container">
+        <h2>Creación de Cuenta</h2>
+        <form>
+            <p>Nombres:</p>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <p>Apellidos:</p>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <p>Correo:</p>
+            <input type="email" id="email" name="email" required>
+
+            <p>Edad:</p>
+            <input type="number" id="age" name="age" required>
+
+            <p>¿Autoriza notificaciones?</p>
+            <input type="checkbox" id="notifications" name="notifications">
+
+            <button onclick="crear_cuenta()">Crear Cuenta</button>
+        </form>
+    </div>
+    <footer>
+        <p>Quito - Ecuador</p>
+        <p>Kluius816@gmail.com</p>
+    </footer>
+    <script src="assets/javascript/crear_cuenta.js"></script>
+</body>
+</html>

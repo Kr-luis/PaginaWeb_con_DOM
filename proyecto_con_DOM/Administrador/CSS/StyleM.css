@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(15deg, rgb(195, 105, 247), rgb(136, 245, 136));
+  }
+  
+  .menu {
+    text-align: center;
+  }
+  
+  .menu h1 {
+    font-size: 48px;
+  }
+  
+  .menu button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgb(124, 16, 124);
+    color: white;
+    outline: none;
+  }
+  
+  .menu button:hover {
+    background-color: #45a049;
+  }
+  

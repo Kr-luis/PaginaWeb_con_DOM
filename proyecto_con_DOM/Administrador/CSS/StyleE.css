@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 150vh;
+    background: linear-gradient(15deg,rgb(136, 245, 136), rgb(195, 105, 247));
+  }
+  
+  form {
+    margin-top: 50px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+  }
+  
+  input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  .foto-evento{
+    height: 200px;
+    width: 450px;
+    border-radius: 8px;
+  }
+  
+  .salir button{
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #e277e8;
+    color: white;
+  }
+  .espacio{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+}
+  

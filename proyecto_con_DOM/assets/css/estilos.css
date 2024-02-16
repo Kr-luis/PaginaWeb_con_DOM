@@ -1,0 +1,165 @@
+header{
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+}
+.row{
+    display: flex;
+}
+.col-md-6{
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#col1 {
+    background-color: #707070;
+    color: #fff;
+    border-radius: 10px;
+}
+#col2 {
+    background: linear-gradient(56deg, rgb(9, 218, 255), rgb(3, 134, 84), yellow);
+    color: #fff;
+    border-radius: 10px;
+}
+.img_login{
+    width: 100PX;
+    height: 100PX;
+    max-width: 100%;
+    border-radius: 15px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-top: 10px;
+    color: #ffffff;
+}
+input {
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.forgot-password {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+    color: #555;
+}
+.login-btn, .signup-btn {
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.signup-btn {
+    background-color: #2ecc71;
+}
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.crear_cuenta {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #2980b9;
+    padding: 10px;
+}
+footer {
+    background-color: #2e2e2e;
+    color: wheat;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: auto;
+    padding: auto;
+}
+section h1 {
+    text-align: center;
+    margin: 0;
+}
+section nav{
+    background: linear-gradient(75deg, rgb(4, 216, 163), rgb(79, 6, 148), rgb(4, 216, 163));
+}
+.comentarios{
+    background: linear-gradient(0deg, rgb(8, 112, 182), rgb(21, 236, 147), rgb(24, 250, 100));
+}
+#comentarios{
+    background: linear-gradient(0deg, rgb(8, 112, 182), rgb(21, 236, 147), rgb(24, 250, 100));
+}
+#col2 img{
+    margin: auto;
+    padding: 10px;
+}
+.fotoperfil{
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+}
+.crear_evento {
+    padding: 8px;
+    background-color: #8726a5;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+.card {
+    width: calc(33.33% - 40px);
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 100px;
+    align-items: center;
+    text-align: center;
+}
+
+.card h5 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.card p {
+    margin-bottom: 5px;
+}
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 15px;
+    background-color: #38ec1499;
+    color: #fdfdfd;
+    text-decoration: none;
+    border-radius: 3px;
+}

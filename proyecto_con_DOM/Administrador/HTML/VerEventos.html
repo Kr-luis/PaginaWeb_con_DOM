@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Ver Eventos</title>
+    <!-- Incluye la biblioteca Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Incluye tu archivo de estilos personalizados -->
+    <link rel="stylesheet" href="/Administrador/CSS/StyleE.css">
+</head>
+
+<body>
+
+    <h1>Ver Eventos</h1>
+
+    <form id="searchForm">
+        <input type="text" id="codigo" placeholder="Ingrese el código del evento" required>
+        <input type="submit" value="Buscar">
+    </form>
+
+    <!-- Aquí se mostrará el card del evento encontrado -->
+    <div id="eventoCard" style="display: none;">
+        <div class="card mb-4" id="cardEvento">
+            <div class="card-body">
+                <!-- Aquí se insertará la información del evento -->
+            </div>
+        </div>
+        <button id="editarEvento" class="btn btn-primary">Editar Evento</button>
+        <button id="eliminarEvento" class="btn btn-danger">Eliminar Evento</button>
+    </div>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitar el envío del formulario
+
+            var codigo = document.getElementById('codigo').value;
+            var eventos = JSON.parse(localStorage.getItem('eventos')) || [];
+
+            var eventoEncontrado = eventos.find(function (evento) {
+                return evento.Codigo === codigo;
+            });
+
+            if (eventoEncontrado) {
+                // Mostrar el card del evento encontrado
+                document.getElementById('eventoCard').style.display = 'block';
+                var cardEvento = document.getElementById('cardEvento');
+                cardEvento.querySelector('.card-body').innerHTML = `
+                    <h5 class="card-title">${eventoEncontrado.titulo}</h5>
+                    <p class="card-text">Ubicación: ${eventoEncontrado.Ubicacion}</p>
+                    <p class="card-text">Etiquetas: ${eventoEncontrado.Etiquetas}</p>
+                    <p class="card-text">Descripción: ${eventoEncontrado.Descripcion}</p>
+                    <p class="card-text">Código: ${eventoEncontrado.Codigo}</p> <!-- Mostrar el código -->
+                `;
+
+                // Agregar oyentes de eventos para los botones de editar y eliminar
+                document.getElementById('editarEvento').addEventListener('click', function () {
+                    // Lógica para editar el evento
+                    console.log('Editar evento:', eventoEncontrado);
+                });
+
+                document.getElementById('eliminarEvento').addEventListener('click', function () {
+                    // Lógica para eliminar el evento
+                    var indice = eventos.indexOf(eventoEncontrado);
+                    if (indice !== -1) {
+                        eventos.splice(indice, 1);
+                        localStorage.setItem('eventos', JSON.stringify(eventos));
+                        alert('Evento eliminado correctamente.');
+                        window.location.reload(); // Recargar la página para actualizar la lista de eventos
+                    }
+                });
+            } else {
+                // Mostrar mensaje de evento no encontrado
+                alert('El evento con el código ingresado no fue encontrado.');
+            }
+        });
+    </script>
+
+    <div class="espacio"></div>
+    <div class="salir">
+        <button onclick="window.location.href='Menu.html'">Regresar Menu</button>
+        <button onclick="window.location.href='Login.html'">Salir</button>
+    </div>
+
+</body>
+
+</html>

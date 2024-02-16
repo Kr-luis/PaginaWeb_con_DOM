@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <h1>Tickets Now</h1>
+</header>
+<nav>
+    <a href="carrito.html">Carrito</a>
+    <a href="Inicio.html">Inicio</a>
+    <a href="login.html">Cerrar Sesion</a>
+    <a href="nosotros.html">Nosotros</a>
+</nav>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" id="col1">
+                <img class="fotoperfil"
+                     src="assets/imagenes/fotoperfil.jpeg" alt="fotoperfil">
+                <h1 align="center">Kairos</h1>
+                <p align="center">Comentarios realizados: 37</p>
+                <hr>
+                <h2>Gustos</h2>
+                <ul>
+                    <li>Musica</li>
+                    <li>Arte</li>
+                    <li>Terror</li>
+                    <li>Comicon</li>
+                </ul>
+                <hr>
+                <h2>Ultimos eventos</h2>
+                <ul>
+                    <li>POLICALIFA</li>
+                    <li>EL PIXEL</li>
+                </ul>
+                <hr>
+            </div>
+            <div class="col-md-6" id="col2">
+                <h2>Correo</h2>
+                <p>ejemplo@correo.com</p>
+                <hr>
+                <h2>Nombre</h2>
+                <p>Pepe Garcia</p>
+                <hr>
+                <h2>Eventos Asistidos</h2>
+                <p>Dos eventos asistidos hasta ahora</p>
+                <h2>Calificaciones de eventos</h2>
+                <p>Tu promedio de calificación es de 4.3 de 5</p>
+                <h2>Ubicaciones preferidas</h2>
+                <ul>
+                    <li>Cumbaya</li>
+                    <li>Quito</li>
+                    <li>Cuenca</li>
+                </ul>
+                <nav>
+                    <a href="Historial.html">Historial</a>
+                </nav>
+                <!-- Dentro del div con id="col2" -->
+                <h2>Eventos Creados</h2>
+                <div id="projectList">
+                    <!-- Aquí se mostrarán los eventos creados -->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <p>Quito - Ecuador</p>
+    <p>Kluius816@gmail.com</p>
+</footer>
+
+<script>
+    function addProject() {
+        var titulo = document.getElementById('titulo').value;
+        var Ubicacion = document.getElementById('Ubicacion').value;
+        var Etiquetas = document.getElementById('Etiquetas').value;
+        var Descripcion = document.getElementById('Descripcion').value;
+        var Codigo = document.getElementById('Codigo').value; // Agregar el campo de código
+
+        var evento = {
+            titulo: titulo,
+            Ubicacion: Ubicacion,
+            Etiquetas: Etiquetas,
+            Descripcion: Descripcion,
+            Codigo: Codigo // Agregar el campo de código al objeto evento
+        };
+
+        // Obtener eventos existentes del localStorage o inicializar un array vacío si no hay ninguno
+        var eventos = JSON.parse(localStorage.getItem('eventos')) || [];
+
+        // Agregar el nuevo evento al array de eventos
+        eventos.push(evento);
+
+        // Guardar el array de eventos actualizado en el localStorage
+        localStorage.setItem('eventos', JSON.stringify(eventos));
+
+        // Actualizar la lista de eventos en la página
+        displayEventos();
+    }
+
+    function displayEventos() {
+        var eventos = JSON.parse(localStorage.getItem('eventos')) || [];
+
+        var projectList = document.getElementById('projectList');
+        projectList.innerHTML = ''; // Limpiar la lista antes de agregar los eventos
+
+        eventos.forEach(function(evento) {
+            var projectElement = document.createElement('div');
+            projectElement.className = 'col-md-4';
+            projectElement.innerHTML = `
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">${evento.titulo}</h5>
+                    <p class="card-text">Ubicacion: ${evento.Ubicacion}</p>
+                    <p class="card-text">Etiquetas: ${evento.Etiquetas}</p>
+                    <p class="card-text">Descripcion: ${evento.Descripcion}</p>
+                    <p class="card-text">Código: ${evento.Codigo}</p> <!-- Mostrar el código -->
+                    <a href="comentarios.html" class="btn btn-primary" target="_blank">Añadir al carrito</a>
+                    <a href="carrito.html" class="btn btn-primary" target="_blank">Comentarios</a>
+                </div>
+            </div>
+        `;
+            projectList.appendChild(projectElement);
+        });
+    }
+
+    // Llamar a la función para mostrar los eventos cuando la página se cargue
+    displayEventos();
+</script>
+</body>
+</html>
